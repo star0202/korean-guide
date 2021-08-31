@@ -18,8 +18,8 @@
 				<Notification storage-key="v13-notice">
 					<span class="notification-icon"><PartyPopperIcon /></span>
 					<span>
-						현재 discord.js v13 을 위한 가이드를 읽고 있습니다.
-						<router-link to="/whats-new.html">추가된 기능들</router-link>을 확인해 보시거나, <a href="https://v12.discordjs.guide">discord.js v12 가이드</a> 를 찾아가세요.
+						현재 discord.js v13 버전 가이드를 읽고 있습니다.
+						<router-link to="/whats-new.html">추가된 기능들</router-link>을 확인해 보시거나, <a href="https://v12.discordjs.guide">discord.js v12 버전 가이드</a>를 찾아가세요.
 					</span>
 				</Notification>
 			</Notifications>
