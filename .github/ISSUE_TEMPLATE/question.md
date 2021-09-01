@@ -1,7 +1,10 @@
 ---
 name: Question/General support request
-about: Ask questions about the guide. 
-labels: 'question'
+about: Ask questions about the guide.
+title: ''
+labels: question
+assignees: ''
+
 ---
 
 <!-- Use Discord for questions about discord.js: https://discord.gg/djs -->
