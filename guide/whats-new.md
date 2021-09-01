@@ -19,14 +19,14 @@
 				profile="user"
 				author="discord.js"
 				:command="true"
-			>upgrade</DiscordInteraction>
+			>업그레이드</DiscordInteraction>
 		</template>
-		discord.js v13 has released and the guide has been updated!
+		discord.js v13 버전이 출시되고 가이드도 업데이트 되었습니다!
 		<span class="emoji-container">
 			<img class="emoji-image" title="tada" src="https://twemoji.maxcdn.com/v/13.1.0/72x72/1f389.png" alt="" />
 		</span>
 		<br />
-		This includes additions and changes made in Discord, such as slash commands and message components.
+		이 가이드는 슬래쉬 명령어, 메세지 컴포넌트 같은 Discord의 추가 및 변경 사항을 포함하고 있답니다!
 	</DiscordMessage>
 </DiscordMessages>
 
@@ -63,7 +63,7 @@
 
 <DiscordMessages>
 	<DiscordMessage profile="bot">
-		Thank you to all of those that contributed to the development of discord.js and the guide!
+		discord.js와 가이드 개발에 도움을 주신 모든 분들께 진심으로 감사드립니다!
 		<span class="emoji-container">
 			<img class="emoji-image" title="heart" src="https://twemoji.maxcdn.com/v/13.1.0/72x72/2764.png" alt="" />
 		</span>
