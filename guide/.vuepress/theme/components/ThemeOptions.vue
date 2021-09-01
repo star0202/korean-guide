@@ -1,7 +1,7 @@
 <template>
 	<div class="theme-options">
 		<ul class="color-theme-options">
-			<span>Theme</span>
+			<span>테마</span>
 			<li>
 				<button
 					class="default-theme"
