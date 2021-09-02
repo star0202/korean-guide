@@ -8,6 +8,7 @@
 
 * [Visual Studio Code](https://code.visualstudio.com/) 는 많이 사용되는 에디터입니다; 이 에디터는 빠르고 강력한 것으로 유명합니다. 정말 많은 언어를 지원하고, 터미널도 포함하고 있으며, 내장 인텔리센스 지원, 그리고 JavaScript와 TypeScript를 위한 자동완성을 지원합니다. 정말 추천하는 에디터입니다.
 * [Atom](https://atom.io/)은 사용자 친화적이고, 간결하며, 코드 탐색이 쉽습니다.
+* [Sublime Text](https://www.sublimetext.com/)는 코드를 쓰고 읽기 쉬운 또다른 유명한 에디터입니다.
 
 ## 린터 설치하기
 
@@ -17,23 +18,25 @@
 npm install --save-dev eslint
 ```
 
-적절한 에디터들의 장점 중 하나는 플러그인으로 린터 지원 기능이 있다는 것입니다. 여러분의 에디터에 적절한 플러그인(들) 을 설치하세요.
+좋은 에디터들의 장점 중 하나는 플러그인으로 린터 지원 기능이 있다는 것입니다. 여러분의 에디터에 맞는 플러그인을 설치하세요.
 
-* [Visual Studio Code 용 ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-* [Atom 용 Linter-ESLint](https://atom.io/packages/linter-eslint) ([Linter for Atom](https://atom.io/packages/linter)이 필요합니다)
+* [Visual Studio Code용 ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+* [Atom용 Linter-ESLint](https://atom.io/packages/linter-eslint) ([Linter for Atom](https://atom.io/packages/linter)이 필요합니다)
+* [Sublime Text용 ESLint](https://packagecontrol.io/packages/ESLint)
 
 ::: tip
 에디터 안에서 바로 플러그인을 볼 수 있습니다.
 
 - Visual Studio Code: `Ctrl + Shift + X`
 - Atom: `Ctrl + ,` 그리고 "Install" 클릭
+- Sublime Text: `Ctrl + Shift + P` 후 "Install Package"([Package Control](https://packagecontrol.io/installation)를 사용하는)를 검색하세요
 
 그 후, 적절한 플러그인을 찾고 설치하세요.
 :::
 
 ## ESLint 규칙 설정
 
-여러분이 ESLint를 사용하기 시작할 때, 여러분의 코드에서 엄청난 양의 에러와 경고를 보여줄 지도 모릅니다. 하지만 걱정하지 마세요. 일단 시작하기 위해, 여러분의 프로젝트 폴더 안에 `.eslintrc.json` 라는 파일을 만들고, 아래 코드를 붙혀넣으세요.
+여러분이 ESLint를 사용하기 시작할 때, 여러분의 코드에서 엄청난 양의 에러와 경고를 보여줄 지도 모릅니다. 하지만 걱정하지 마세요. 일단 시작하기 위해, 여러분의 프로젝트 폴더 안에 `.eslintrc.json` 라는 파일을 만들고, 아래 코드를 복붙해주세요.
 
 ```json
 {
