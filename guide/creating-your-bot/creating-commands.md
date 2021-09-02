@@ -1,56 +1,55 @@
-# Creating commands
+# 명령어 만들기
 
-::: tip
-This page is a follow-up and bases its code on [the previous page](/creating-your-bot/).
+::: 팁
+이 페이지는 [이전 페이지](/creating-your-bot/)의 코드를 기반으로 합니다.
 :::
 
 <DiscordMessages>
 	<DiscordMessage profile="bot">
 		<template #interactions>
-			<DiscordInteraction profile="user" :command="true">ping</DiscordInteraction>
+			<DiscordInteraction profile="user" :command="true">ping!</DiscordInteraction>
 		</template>
-		Pong!
+		pong!
 	</DiscordMessage>
 </DiscordMessages>
 
-Discord allows developers to register [slash commands](https://discord.com/developers/docs/interactions/application-commands), which provide users a first-class way of interacting directly with your application. Before being able to reply to a command, you must first register it.
+Discord를 통해 개발자는 [슬래시 커맨드](https://discord.com/developers/docs/interactions/application-commands)을 등록할 수 있으며, 이는 사용자에게 애플리케이션과 직접 상호작용할 수 있는 최고 수준의 방법을 제공합니다. 명령에 응답하게 만드려면 먼저 명령을 등록해야 합니다.
 
-## Registering commands
+## 명령어 등록
 
-This section will cover only the bare minimum to get you started, but you can refer to our [in-depth page on registering slash commands](/interactions/registering-slash-commands.md) for further details. It covers guild commands, global commands, options, option types, and choices.
+이 섹션에서는 시작하는 데 필요한 최소한의 내용만 다루지만 자세한 내용은 [슬래시 명령 등록에 대한 자세한 페이지](/interactions/registering-slash-commands.md)를 참조하세요. 길드 명령, 전역 명령, 옵션, 옵션 유형 및 선택 사항을 다룹니다.
 
 ### Command deployment script
 
-Create a `deploy-commands.js` file in your project directory. This file will be used to register and update the slash commands for your bot application.
+프로젝트 디렉토리에 `deploy-commands.js` 파일을 만듭니다. 이 파일은 봇 애플리케이션에 대한 슬래시 명령을 등록하고 업데이트하는 데 사용됩니다.
 
-You'll need to install [`@discordjs/builders`](https://github.com/discordjs/builders), [`@discordjs/rest`](https://github.com/discordjs/discord.js-modules/blob/main/packages/rest/), and [`discord-api-types`](https://github.com/discordjs/discord-api-types/).
+먼저, [`@discordjs/builders`](https://github.com/discordjs/builders), [`@discordjs/rest`](https://github.com/discordjs/discord.js-modules/blob/main/packages/rest/), 그리고 [`discord-api-types`](https://github.com/discordjs/discord-api-types/)를 설치해야 합니다.
 
 ```sh:no-line-numbers
 npm install @discordjs/builders @discordjs/rest discord-api-types
 ```
+다음은 사용할 수 있는 배포 스크립트입니다. 다음 변수에 중점을 둡니다.
 
-Below is a deployment script you can use. Focus on these variables:
+- `clientId`: 클라이언트의 id
+- `guildId`: 개발하고 테스트 할 서버의 id
+- `commands`: 등록할 명령의 리스트. `@discordjs/builders` 의 [슬래시 명령 빌더](/popular-topics/builders.md#slash-command-builders)는 명령에 대한 데이터를 빌드하는 데 사용됩니다.
 
-- `clientId`: Your client's id
-- `guildId`: Your development server's id
-- `commands`: An array of commands to register. The [slash command builder](/popular-topics/builders.md#slash-command-builders) from `@discordjs/builders` is used to build the data for your commands
-
-::: tip
-In order to get your client and guild ids, open Discord and go to your settings. On the "Advanced" page, turn on "Developer Mode". This will enable a "Copy ID" button in the context menu when you right-click on a server icon, a user's profile, etc.
+::: 팁
+클라이언트 및 서버 ID를 얻으려면 Discord를 열고 설정으로 이동하십시오. "고급" 페이지에서 "개발자 모드"를 켭니다. 이렇게 하면 서버 아이콘, 사용자 프로필 등을 마우스 오른쪽 버튼으로 클릭할 때 우클릭 메뉴에서 "ID 복사" 버튼이 활성화됩니다.
 :::
 
-:::: code-group
+:::: 코드 모음
 ::: code-group-item deploy-commands.js
-```js{4,6-11}
+```js
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const { clientId, guildId, token } = require('./config.json');
 
 const commands = [
-	new SlashCommandBuilder().setName('ping').setDescription('Replies with pong!'),
-	new SlashCommandBuilder().setName('server').setDescription('Replies with server info!'),
-	new SlashCommandBuilder().setName('user').setDescription('Replies with user info!'),
+	new SlashCommandBuilder().setName('ping').setDescription('pong! 이라고 대답합니다'),
+	new SlashCommandBuilder().setName('server').setDescription('유저의 정보와 함께 대답합니다'),
+	new SlashCommandBuilder().setName('user').setDescription('서버의 정보와 함께 대답합니다'),
 ]
 	.map(command => command.toJSON());
 
@@ -63,7 +62,7 @@ const rest = new REST({ version: '9' }).setToken(token);
 			{ body: commands },
 		);
 
-		console.log('Successfully registered application commands.');
+		console.log('애플리케이션 커맨드를 정상적으로 등록했습니다');
 	} catch (error) {
 		console.error(error);
 	}
@@ -73,18 +72,18 @@ const rest = new REST({ version: '9' }).setToken(token);
 ::: code-group-item config.json
 ```json {2-3}
 {
-	"clientId": "123456789012345678",
-	"guildId": "876543210987654321",
-	"token": "your-token-goes-here"
+	"clientId": "클라이언트 id",
+	"guildId": "서버 id",
+	"token": "토큰-붙여넣기"
 }
 ```
 :::
 ::::
 
-Once you fill in these values, run `node deploy-commands.js` in your project directory to register your commands to a single guild. It's also possible to [register commands globally](/interactions/registering-slash-commands.md#global-commands).
+이 값을 채우고 나면 프로젝트 디렉토리에서 `node deploy-commands.js` 를 실행하여 단일 서버에 명령을 등록합니다. [전역적으로 명령 등록](/interactions/registering-slash-commands.md#global-commands)도 가능합니다.
 
-::: tip
-You only need to run `node deploy-commands.js` once. You should only run it again if you add or edit existing commands.
+::: 팁
+`node deploy-commands.js`는 한 번만 실행하면 됩니다. 기존 명령을 추가하거나 편집하는 경우에만 다시 실행해야 합니다.
 :::
 
 ## Replying to commands
