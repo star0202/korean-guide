@@ -54,12 +54,12 @@
 
 ### 업데이트
 
-- Commando: Commando는 중단되었으며, [Sapphire](https://github.com/discordjs/guide/pull/711) 의 가이드로 대체됩니다
-- [Voice](/voice/): [`@discordjs/voice`](https://github.com/discordjs/voice) 패키지를 사용하도록 다시 짜였습니다
-- [Command handling](/command-handling/): 슬래쉬 명령어를 사용하도록 업데이트 되었습니다
+- Commando: Commando는 개발 중단되었으며, [Sapphire](https://github.com/discordjs/guide/pull/711) 의 가이드로 대체됩니다
+- [음성](/voice/): [`@discordjs/voice`](https://github.com/discordjs/voice) 패키지를 사용하도록 다시 짜였습니다
+- [명령어 핸들링](/command-handling/): 슬래쉬 명령어를 사용하도록 업데이트 되었습니다
 	- 방치된 부분을 제거했습니다
 - `client.on('message')` 스니펫이 `client.on('interactionCreate')` 로 바뀌었습니다
-	- [Message content will become a new priviledged intent in April 2022](https://support-dev.discord.com/hc/en-us/articles/4404772028055)
+	- [2022년 4월부터 메세지 내용이 Privileged Intent가 될 예정입니다](https://support-dev.discord.com/hc/en-us/articles/4404772028055)
 
 <DiscordMessages>
 	<DiscordMessage profile="bot">
