@@ -40,7 +40,7 @@ npm install --save-dev eslint
 	"extends": "eslint:recommended",
 	"env": {
 		"node": true,
-		"es2021": true
+		"es6": true
 	},
 	"parserOptions": {
 		"ecmaVersion": 2021
@@ -74,7 +74,7 @@ npm install --save-dev eslint
 		"curly": ["error", "multi-line", "consistent"],
 		"dot-location": ["error", "property"],
 		"handle-callback-err": "off",
-		"indent": ["error", 4],
+		"indent": ["error", "tab"],
 		"keyword-spacing": "error",
 		"max-nested-callbacks": ["error", { "max": 4 }],
 		"max-statements-per-line": ["error", { "max": 2 }],
@@ -115,7 +115,7 @@ npm install --save-dev eslint
 * 큰따옴표보다 작은따옴표를 사용하도록 합니다.
 * 세미콜론을 강제합니다. JavaScript에서 필수는 아니지만, 굉장히 좋은 규칙 중 하나입니다.
 * 요청 속성이 같은 줄 위에 오도록 강제합니다.
-* 들여쓰기로 공백 4칸을 사용합니다.
+* 들여쓰기로 탭을 사용합니다.
 * 중첩된 콜백이 4번 이하로 오도록 강제합니다. 만약 이 에러가 떴다면, 여러분의 코드를 리팩토링할 좋은 기회일 겁니다.
 
 만약 여러분이 현재 선호하는 스타일과 많이 차이가 나거나 몇몇 규칙이 마음에 들지 않는다고 해도 문제 없습니다! [ESLint 문서](https://eslint.org/docs/rules/)를 읽어보고, 여러분이 수정하고 싶은 규칙(들)을 찾은 후, 문서에 따라서 마음껏 변경하세요.
