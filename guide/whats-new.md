@@ -55,7 +55,7 @@
 ### 업데이트
 
 - Commando: Commando는 개발 중단되었으며, [Sapphire](https://github.com/discordjs/guide/pull/711) 의 가이드로 대체됩니다
-- [음성](/voice/): [`@discordjs/voice`](https://github.com/discordjs/voice) 패키지를 사용하도록 다시 짜였습니다
+- [Voice](/voice/): [`@discordjs/voice`](https://github.com/discordjs/voice) 패키지를 사용하도록 다시 짜였습니다
 - [명령어 핸들링](/command-handling/): 슬래쉬 명령어를 사용하도록 업데이트 되었습니다
 	- 방치된 부분을 제거했습니다
 - `client.on('message')` 스니펫이 `client.on('interactionCreate')` 로 바뀌었습니다
